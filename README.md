@@ -10,6 +10,7 @@ Week 1 of my self imposed coding challenge! Let's see how much I grow throughout
 * Dierbergs 2PM-6PM
 * Dinner / Gaming / Watch Football
 * Check Daily Water Consumption
+* Check GitHub Contributions Heat Map(Remember, this is a daily streak. Do NOT allow it to break!)
 * Read 1 Chapter - 10PM Bedtime Estimate
 
 
