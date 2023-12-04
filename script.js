@@ -26,7 +26,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Finally, append the new row to the table body
         taskTable.appendChild(newRow);
+
+        // Set to save in local storage.
+        saveTasksToLocalStorage();
     });
+
+    function saveTasksToLocalStorage() {
+        const taskRows = document.querySelectorAll('#task-table tbody tr');
+        const tasks = [];
+
+        taskRows.forEach(row => {
+            const taskName = row.querySeelctor('td:first-child').textContent;
+            tasks.push(taskName);
+        });
+
+        // Store all tasks as JSON in local storage
+        localStorage.setItem('Tasks', JSON.stringify(tasks));
+    }
 })
 
 // ? Add functionality where data is stored in local storage, but is refreshed at midnight each night to reset task manager. BUT potentially keep certain ones that will be there everyday? (like drinking water)
