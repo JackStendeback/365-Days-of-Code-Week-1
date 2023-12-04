@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const tasks = [];
 
         taskRows.forEach(row => {
-            const taskName = row.querySeelctor('td:first-child').textContent;
+            const taskName = row.querySelector('td:first-child').textContent;
             tasks.push(taskName);
         });
 
