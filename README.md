@@ -16,16 +16,16 @@ Week 1 of my self imposed coding challenge! Let's see how much I grow throughout
 ![Jokes Card](https://readme-jokes.vercel.app/api)
 
 ## Day 1 Goals: December 3rd 2023
-* 6AM Wakeup(Drink Water)
-* Edit/Open Github Issues To Be Completed Today(If Not Finished Night Before)
-* 3-4 Hours of Deep Work(Coding & GitHub) (Log How Long We ACTUALLY Coded Here / When We Did)
-* 5 Mile Run (4 Min On - 1 Min Rest)
-* Shower/Lunch With Zack
-* Dierbergs 2PM-6PM
-* Dinner / Gaming / Watch Football
-* Check Daily Water Consumption
-* Check GitHub Contributions Heat Map(Remember, this is a daily streak. Do NOT allow it to break!)
-* Read 1 Chapter - 10PM Bedtime Estimate
+* 6AM Wakeup(Drink Water) - (Woke up at 10am)
+* Edit/Open Github Issues To Be Completed Today(If Not Finished Night Before) - (Completed a few but not all)
+* 3-4 Hours of Deep Work(Coding & GitHub) (Log How Long We ACTUALLY Coded Here / When We Did) - (30Minutes)
+* 5 Mile Run (4 Min On - 1 Min Rest) - (Completed)
+* Shower/Lunch With Zack - (Completed)
+* Dierbergs 2PM-6PM - (Completed)
+* Dinner / Gaming / Watch Football - (Completed)
+* Check Daily Water Consumption - (Need to pick up another water jug tomorrow)
+* Check GitHub Contributions Heat Map(Remember, this is a daily streak. Do NOT allow it to break!) - (The streak continues, stay on it)
+* Read 1 Chapter - 10PM Bedtime Estimate - (Early bedtime might be challening, as I feel really productive at night)
 
 
 ## Day 2 Goals:
