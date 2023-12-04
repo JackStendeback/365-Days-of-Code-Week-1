@@ -28,8 +28,11 @@ Week 1 of my self imposed coding challenge! Let's see how much I grow throughout
 * Read 1 Chapter - 10PM Bedtime Estimate - (Early bedtime might be challening, as I feel really productive at night)
 
 
-## Day 2 Goals:
-* Edit/Open Github Issues To Be Completed Today
+## Day 2 Productivity:
+* Added html title, and body for the task manager body.
+* Added minor CSS styling to make it look modern and sleak.
+* Javascript functionality added to append new table rows and table data upon button click.
+
 
 
 ## Day 3 Goals:

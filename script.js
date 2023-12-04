@@ -28,3 +28,5 @@ document.addEventListener("DOMContentLoaded", function () {
         taskTable.appendChild(newRow);
     });
 })
+
+// ? Add functionality where data is stored in local storage, but is refreshed at midnight each night to reset task manager. BUT potentially keep certain ones that will be there everyday? (like drinking water)
