@@ -43,6 +43,34 @@ document.addEventListener("DOMContentLoaded", function () {
         // Store all tasks as JSON in local storage
         localStorage.setItem('Tasks', JSON.stringify(tasks));
     }
-})
+
+    // Now we need to load the tasks from local storage on page load.
+    loadTasksFromLocalStorage();
+    
+    function loadTasksFromLocalStorage() {
+        const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+
+        if (storedTasks) {
+            storedTasks.forEach(task => {
+                const newRow = document.createElement('tr');
+                const taskCell = document.createElement('td');
+                const checkboxCell = document.createElement('td');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.classList.add('inputs');
+
+                taskCell.contentEditable = true;
+                taskCell.textContent = task;
+
+                checkboxCell.appendChild(checkbox);
+
+                newRow.appendChild(taskCell);
+                newRow.appendChild(checkboxCell);
+
+                taskTable.appendChild(newRow);
+            });
+        }
+    }
+});
 
 // ? Add functionality where data is stored in local storage, but is refreshed at midnight each night to reset task manager. BUT potentially keep certain ones that will be there everyday? (like drinking water)
