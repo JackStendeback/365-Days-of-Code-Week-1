@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
         checkbox.type = 'checkbox';
         checkbox.classList.add('inputs');
 
+        // Making the taskCell editable(BIG MOVES!)
+        taskCell.contentEditable = true;
+
         // Adding content to the table data cells
         taskCell.textContent = 'New Task';
         checkboxCell.appendChild(checkbox);
