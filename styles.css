@@ -36,3 +36,16 @@ tfoot {
     color: #fff;
 }
 
+td,th {
+    padding: 8px;
+}
+
+.create-task {
+    display: flex;
+    justify-content: center;
+    padding-top: .5rem;
+}
+
+#task-button {
+    padding: 4px;
+}
