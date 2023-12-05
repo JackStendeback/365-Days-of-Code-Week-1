@@ -74,7 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
     loadTasksFromLocalStorage();
     
     function loadTasksFromLocalStorage() {
-        const storedTasks = JSON.parse(localStorage.getItem(TASKS_KEY));
+        let storedTasks;
+        try {
+            storedTasks = JSON.parse(localStorage.getItem(TASKS_KEY));
+}          catch (error) {
+            console.error('Error parsing tasks from local storage', error);
+}
 
         // We need to make it so it doesnt copy EVERY task again on refresh. (Its doubling the tasks currently)
         if (storedTasks) {
