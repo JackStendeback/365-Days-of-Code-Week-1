@@ -47,7 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
         saveTasksToLocalStorage();
     });
 
-
+    // * gSTUDY THIS! Basically if a name was changed, it saves the new name in local storage from the table 'tasks'
+    taskTable.addEventListener('input', function () {
+        saveTasksToLocalStorage();
+    });
 
     function saveTasksToLocalStorage() {
         const taskRows = document.querySelectorAll('#task-table tbody tr');
