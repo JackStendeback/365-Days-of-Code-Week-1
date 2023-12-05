@@ -1,30 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Get references to the add and delete buttons and the task table
     const addTask = document.getElementById('task-button');
     const deleteTask = document.getElementById('delete-button')
     const taskTable = document.getElementById('task-table').getElementsByTagName('tbody')[0];
     const TASKS_KEY = 'Tasks';
 
+    // Add an event listener to the add task button
     addTask.addEventListener('click', function () {
-        // Creating a new table row upon clicking.
+        // Create a new table row when the add task button is clicked
         const newRow = document.createElement('tr');
 
-        // Creating two table data cells for each added row.
+        // Create two cells for the new row: one for the task name and one for the checkbox
         const taskCell = document.createElement('td');
         const checkboxCell = document.createElement('td');
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.classList.add('inputs');
 
-        // Making the taskCell editable(BIG MOVES!)
+        // Making the taskCell editable so user can enter a task name.(BIG MOVES!)
         taskCell.contentEditable = true;
         
 
-        // Adding content to the table data cells
+        // Set initial content of the cells.
         taskCell.textContent = 'New Task';
         checkbox.setAttribute('for', 'task-input'); // This is for accessibility fixing from lighthouse recommendation in dev tools.
         checkboxCell.appendChild(checkbox);
 
-        // Append the cells to the new row
+        // Add the cells to the new row
         newRow.appendChild(taskCell);
         newRow.appendChild(checkboxCell);
 
@@ -52,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         saveTasksToLocalStorage();
     });
 
-    // * gSTUDY THIS! Basically if a name was changed, it saves the new name in local storage from the table 'tasks'
+    // * STUDY THIS! Basically if a name was changed, it saves the new name in local storage from the table 'tasks'
     taskTable.addEventListener('input', function () {
         saveTasksToLocalStorage();
     });
@@ -61,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const taskRows = document.querySelectorAll('#task-table tbody tr');
         const tasks = [];
 
+        // For each row, check if the checkbox is checked
         taskRows.forEach(row => {
             const taskName = row.querySelector('td:first-child').textContent;
             tasks.push(taskName);
@@ -107,6 +110,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-
-// ? Add functionality where data is stored in local storage, but is refreshed at midnight each night to reset task manager. BUT potentially keep certain ones that will be there everyday? (like drinking water)
-// ? If checkbox = 'checked', then delete button deletes them.
