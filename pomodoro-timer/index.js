@@ -1,6 +1,6 @@
-const timerDisplay = document.getElementById('timer-display');
-const startButton = document.getElementById('start-timer');   
-const pauseButton = document.getElementById('reset-timer');
+const startButton = document.querySelector('.start-timer');  // ? MAKE SURE TO DIFFERENTIATE BETWEEM ID'S AND CLASSES WHEN ASSIGNING CONST VALUES IN JAVASCRIPT. 
+const pauseButton = document.querySelector('reset-timer');  // ? MAKE SURE TO DIFFERENTIATE BETWEEM ID'S AND CLASSES WHEN ASSIGNING CONST VALUES IN JAVASCRIPT. 
+const timeDisplay = document.querySelector('.time');
 
 let isWorkMode = true; // When false, it's break mode
 
@@ -12,7 +12,7 @@ startButton.addEventListener('click', startTimer);
 function displayTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainderSeconds = seconds % 60;
-    timerDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+    timeDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
 }
 
 function startTimer() {
@@ -30,5 +30,13 @@ function startTimer() {
     } 
  }, 1000);
 }
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    isWorkMode = true;
+    displayTime(25 * 60);
+}
+
+resetButton.addEventListener('click', resetTimer);
 
 
