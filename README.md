@@ -38,6 +38,7 @@ Week 1 of my self imposed coding challenge! Let's see how much I grow throughout
 * TODO: Bootstrap styling.
 * Refractor Code
 * Check Lighthouse in Dev Tools. (PERFORMANCE INSIGHTS ARE IMPORTANT! ALWAYS CHECK THEM).
+* Fixed some accessibility issues found in lighthouse, lets fix the rest!
 
 ## Day 3 Goals:
 * Edit/Open Github Issues To Be Completed Today

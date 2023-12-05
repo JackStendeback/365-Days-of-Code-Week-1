@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const addTask = document.getElementById('task-button');
     const deleteTask = document.getElementById('delete-button')
     const taskTable = document.getElementById('task-table').getElementsByTagName('tbody')[0];
+    const TASKS_KEY = 'Tasks';
 
     addTask.addEventListener('click', function () {
         // Creating a new table row upon clicking.
@@ -66,14 +67,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Store all tasks as JSON in local storage
-        localStorage.setItem('Tasks', JSON.stringify(tasks));
+        localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
     }
 
     // Now we need to load the tasks from local storage on page load.
     loadTasksFromLocalStorage();
     
     function loadTasksFromLocalStorage() {
-        const storedTasks = JSON.parse(localStorage.getItem('Tasks'));
+        const storedTasks = JSON.parse(localStorage.getItem(TASKS_KEY));
 
         // We need to make it so it doesnt copy EVERY task again on refresh. (Its doubling the tasks currently)
         if (storedTasks) {
