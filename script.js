@@ -16,9 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Making the taskCell editable(BIG MOVES!)
         taskCell.contentEditable = true;
+        
 
         // Adding content to the table data cells
         taskCell.textContent = 'New Task';
+        checkbox.setAttribute('for', 'task-input'); // This is for accessibility fixing from lighthouse recommendation in dev tools.
         checkboxCell.appendChild(checkbox);
 
         // Append the cells to the new row
