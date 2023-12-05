@@ -39,4 +39,13 @@ function resetTimer() {
 
 resetButton.addEventListener('click', resetTimer);
 
+let sessionsCount = 0;
+
+const sessionDisplay = document.getElementById('sessions-count');
+
+if (timeLeft <= 0 && isWorkMode) {
+    sessionsCount++;
+    sessionDisplay.textContent = ` Pomodoro Sessions Completed: ${sessionsCount}`;
+}
+
 
