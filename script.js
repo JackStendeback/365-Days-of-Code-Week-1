@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Finally, append the new row to the table body
         taskTable.appendChild(newRow);
 
+        taskCell.focus();
+
         // Set to save in local storage.
         saveTasksToLocalStorage();
     });
