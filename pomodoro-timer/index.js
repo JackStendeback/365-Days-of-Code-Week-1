@@ -45,7 +45,7 @@ const sessionDisplay = document.getElementById('sessions-count');
 
 if (timeLeft <= 0 && isWorkMode) {
     sessionsCount++;
-    sessionDisplay.textContent = ` Pomodoro Sessions Completed: ${sessionsCount}`;
+    sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
 }
 
 
