@@ -6,6 +6,7 @@
 
 body {
     background-color: #36213E;
+    overflow: hidden; /* Prevents horizontal scroll */
 }
 
 .title-parent {
