@@ -8,6 +8,20 @@ body {
     background-color: #36213E;
 }
 
+.title-parent {
+    display: flex;
+    justify-content: center;
+    transform: translateY(10rem);
+    margin: 0;
+    padding: 0;
+}
+
+#title {
+    color: #Fff;
+    font-size: 6rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
 .timer-display {
     display: flex;
     justify-content: center;
