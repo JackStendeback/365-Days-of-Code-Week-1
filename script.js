@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const addTask = document.getElementById('task-button');
+    const deleteTask = document.getElementById('delete-button')
     const taskTable = document.getElementById('task-table').getElementsByTagName('tbody')[0];
 
     addTask.addEventListener('click', function () {
@@ -30,6 +31,23 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set to save in local storage.
         saveTasksToLocalStorage();
     });
+
+    // Easy to implement delete task function!
+    deleteTask.addEventListener('click', function () {
+        const taskRows = document.querySelectorAll('#task-table tbody tr');
+
+        taskRows.forEach(row => {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            if (checkbox.checked) {
+                row.remove();
+            }
+        });
+
+        // Save the updated tasks to local storage after deletion
+        saveTasksToLocalStorage();
+    });
+
+
 
     function saveTasksToLocalStorage() {
         const taskRows = document.querySelectorAll('#task-table tbody tr');
@@ -78,3 +96,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ? Add functionality where data is stored in local storage, but is refreshed at midnight each night to reset task manager. BUT potentially keep certain ones that will be there everyday? (like drinking water)
+// ? If checkbox = 'checked', then delete button deletes them.

@@ -44,6 +44,7 @@ td,th {
     display: flex;
     justify-content: center;
     padding-top: .5rem;
+    gap: 0.5rem;
 }
 
 #task-button {
