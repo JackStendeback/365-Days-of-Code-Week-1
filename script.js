@@ -50,7 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function loadTasksFromLocalStorage() {
         const storedTasks = JSON.parse(localStorage.getItem('Tasks'));
 
+        // We need to make it so it doesnt copy EVERY task again on refresh. (Its doubling the tasks currently)
         if (storedTasks) {
+            // This line makes it so the task creation doesn't create unwanted appends.
+            taskTable.innerHTML = '';
+
             storedTasks.forEach(task => {
                 const newRow = document.createElement('tr');
                 const taskCell = document.createElement('td');
