@@ -15,6 +15,7 @@ body {
     height: 100vh;
     font-size: 10rem;
     color: #fff;
+    gap: 2rem;
 }
 
 .time {
@@ -24,8 +25,14 @@ body {
 .start-timer {
     margin-right: 1rem;
     padding: 1rem;
+    background-color: #b8f3ff;
+    border: none;
+    border-radius: 8px;
 }
 
 .reset-timer {
     padding: 1rem;
+    background-color: #b8f3ff;
+    border: none;
+    border-radius: 8px;
 }
