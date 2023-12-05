@@ -24,11 +24,16 @@ function startTimer() {
         timeLeft--;
         displayTime(timeLeft);
 
-    if (timeLeft <= 0) {
-        isWorkMode = !isWorkMode;
-        startTimer();
-    } 
- }, 1000);
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval); // Clear the interval first
+            if (isWorkMode) {
+                sessionsCount++;
+                sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
+            }
+            isWorkMode = !isWorkMode; // Then flip the mode
+            startTimer(); // Then start the timer again
+        } 
+    }, 1000);
 }
 
 function resetTimer() {
@@ -43,9 +48,5 @@ let sessionsCount = 0;
 
 const sessionDisplay = document.getElementById('sessions-count');
 
-if (timeLeft <= 0 && isWorkMode) {
-    sessionsCount++;
-    sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
-}
 
 
