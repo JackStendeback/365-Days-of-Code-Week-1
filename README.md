@@ -32,8 +32,12 @@ Week 1 of my self imposed coding challenge! Let's see how much I grow throughout
 * Added html title, and body for the task manager body.
 * Added minor CSS styling to make it look modern and sleak.
 * Javascript functionality added to append new table rows and table data upon button click.
-
-
+* You can now add tasks to the list, and delete tasks from the list!
+* Local storage has been added to the task manager.
+* Slightly better styling and a more formal title for its use cases.
+* TODO: Bootstrap styling.
+* Refractor Code
+* Check Lighthouse in Dev Tools. (PERFORMANCE INSIGHTS ARE IMPORTANT! ALWAYS CHECK THEM).
 
 ## Day 3 Goals:
 * Edit/Open Github Issues To Be Completed Today
