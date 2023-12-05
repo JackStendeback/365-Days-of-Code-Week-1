@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.timer-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 10rem;
+}
+
+.time {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.start-timer {
+    margin-right: 1rem;
+    padding: 1rem;
+}
+
+.reset-timer {
+    padding: 1rem;
+}
