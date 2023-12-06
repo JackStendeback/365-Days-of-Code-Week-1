@@ -2,6 +2,8 @@ const startButton = document.querySelector('.start-timer');  // ? MAKE SURE TO D
 const resetButton = document.querySelector('.reset-timer');  // ? MAKE SURE TO DIFFERENTIATE BETWEEM ID'S AND CLASSES WHEN ASSIGNING CONST VALUES IN JAVASCRIPT. 
 const timeDisplay = document.querySelector('.time');
 const sessionDisplay = document.getElementById('sessions-count');
+const startSound = new Audio('pomodoro-start.mp3'); // * Start Audio
+const endSound = new Audio('pomodoro-end.mp3'); // * End Audio
 let sessionsCount = localStorage.getItem('sessionsCount') ? parseInt(localStorage.getItem('sessionsCount')) : 0;
 sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
 
@@ -23,18 +25,34 @@ function startTimer() {
 
     let timeLeft = isWorkMode ? 10 : 5;
 
+    // Play the start sound if it's work mode
+    if (isWorkMode) {
+        startSound.play();
+    }
+
     timerInterval = setInterval(() => {
         timeLeft--;
         displayTime(timeLeft);
 
         if (timeLeft <= 0) {
             clearInterval(timerInterval); // Clear the interval first
+
+             // Play the end sound if it's work mode or start sound if it's break mode
+            if (isWorkMode) {
+                endSound.play();
+            } else {
+                startSound.play();
+            }
+
             if (isWorkMode) {
                 sessionsCount++;
                 localStorage.setItem('sessionsCount', sessionsCount); // ? Save to localStorage
                 sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
             }
             isWorkMode = !isWorkMode; // Then flip the mode
+            if (isWorkMode) {
+                startSound.play();
+            }
             startTimer(); // Then start the timer again
         } 
     }, 1000);
