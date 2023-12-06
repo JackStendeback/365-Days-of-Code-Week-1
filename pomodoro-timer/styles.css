@@ -51,3 +51,9 @@ body {
     border: none;
     border-radius: 8px;
 }
+
+#sessions-count {
+    font-size: 2rem;
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+}

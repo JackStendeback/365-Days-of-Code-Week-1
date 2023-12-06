@@ -1,6 +1,8 @@
 const startButton = document.querySelector('.start-timer');  // ? MAKE SURE TO DIFFERENTIATE BETWEEM ID'S AND CLASSES WHEN ASSIGNING CONST VALUES IN JAVASCRIPT. 
 const resetButton = document.querySelector('.reset-timer');  // ? MAKE SURE TO DIFFERENTIATE BETWEEM ID'S AND CLASSES WHEN ASSIGNING CONST VALUES IN JAVASCRIPT. 
 const timeDisplay = document.querySelector('.time');
+const sessionDisplay = document.getElementById('sessions-count');
+let sessionsCount = 0; // Variable to hold the number of sessions completed
 
 let isWorkMode = true; // When false, it's break mode
 
@@ -18,7 +20,7 @@ function displayTime(seconds) {
 function startTimer() {
     clearInterval(timerInterval);
 
-    let timeLeft = isWorkMode ? 25 * 60 : 5 * 60; // Calculate the time based on the mode
+    let timeLeft = isWorkMode ? 25 * 60 : 5 * 60;
 
     timerInterval = setInterval(() => {
         timeLeft--;
@@ -44,9 +46,6 @@ function resetTimer() {
 
 resetButton.addEventListener('click', resetTimer);
 
-let sessionsCount = 0;
-
-const sessionDisplay = document.getElementById('sessions-count');
 
 
 
