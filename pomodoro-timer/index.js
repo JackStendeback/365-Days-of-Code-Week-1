@@ -20,6 +20,14 @@ function displayTime(seconds) {
     timeDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
 }
 
+const badgeLevels = [
+    { level: 'Bronze', sessions: 5 },
+    { level: 'Silver', sessions: 10 },
+    { level: 'Gold', sessions: 15 },
+    { level: 'Platinum', sessions: 20 },
+    { level: 'Diamond', sessions: 25 },
+]
+
 function startTimer() {
     clearInterval(timerInterval);
 
@@ -46,6 +54,17 @@ function startTimer() {
                 sessionsCount++;
                 localStorage.setItem('sessionsCount', sessionsCount); // ? Save to localStorage
                 sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
+
+                for (const badge of badgeLevels) {
+                    if (sessionsCount === badge.sessions) {
+                        // Check if the user has already earned this badge
+                        if (!localStorage.getItem(`badge-${badge.level}`)) {
+                            // If not, save it to localStorage and alert the user
+                            localStorage.setItem(`badge-${badge.level}`, true);
+                            alert(`Congratulations! You've earned the ${badge.level} badge!`);
+                        }
+                    }
+                }
             }
             isWorkMode = !isWorkMode; // Then flip the mode
             
