@@ -3,6 +3,7 @@ const resetButton = document.querySelector('.reset-timer');  // ? MAKE SURE TO D
 const timeDisplay = document.querySelector('.time');
 const sessionDisplay = document.getElementById('sessions-count');
 let sessionsCount = localStorage.getItem('sessionsCount') ? parseInt(localStorage.getItem('sessionsCount')) : 0;
+sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
 
 let isWorkMode = true; // When false, it's break mode
 
@@ -20,7 +21,7 @@ function displayTime(seconds) {
 function startTimer() {
     clearInterval(timerInterval);
 
-    let timeLeft = isWorkMode ? 25 * 60 : 5 * 60;
+    let timeLeft = isWorkMode ? 10 : 5;
 
     timerInterval = setInterval(() => {
         timeLeft--;
