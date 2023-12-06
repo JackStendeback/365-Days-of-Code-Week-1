@@ -44,8 +44,8 @@ function resetTimer() {
     clearInterval(timerInterval);
     isWorkMode = true;
     displayTime(25 * 60);
-    sessionsCount = 0;
-    localStorage.setItem('sessionsCount', sessionsCount); // ? Save to localStorage
+    // sessionsCount = 0;
+    // localStorage.setItem('sessionsCount', sessionsCount); // ? Save to localStorage
 }
 
 resetButton.addEventListener('click', resetTimer);
