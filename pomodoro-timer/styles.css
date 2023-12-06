@@ -45,11 +45,23 @@ body {
     border-radius: 8px;
 }
 
+.start-timer:hover {
+    background-color: #8ac6d0;
+    color: #36213E;
+    cursor: pointer;
+}
+
 .reset-timer {
     padding: 1rem;
     background-color: #b8f3ff;
     border: none;
     border-radius: 8px;
+}
+
+.reset-timer:hover {
+    background-color: #8ac6d0;
+    color: #36213E;
+    cursor: pointer;
 }
 
 #sessions-count {
