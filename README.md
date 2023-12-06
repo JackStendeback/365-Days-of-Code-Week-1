@@ -48,6 +48,7 @@ Week 1 of my self imposed coding challenge! Let's see how much I grow throughout
 * TODO: Add more badges to the badge system (Platinum, Diamond, etc)
 * TODO: Do lighthouse check for Pomodoro Timer and fix any issues
 * TODO: Add more fun features to Pomodoro Timer (Maybe a fun animation or something)
+* MAJOR TODO: Add mobile responsiveness to Pomodoro Timer(Currently only works on desktop / looks terrible on mobile)
 
 ## Day 4 Goals:
 * Edit/Open Github Issues To Be Completed Today
