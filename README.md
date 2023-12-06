@@ -45,8 +45,9 @@ Week 1 of my self imposed coding challenge! Let's see how much I grow throughout
 * Deployed Pomodoro Timer to Netlify
 * Added fun badge system to Pomodoro Timer
 * Added unique audio sounds to Pomodoro Timer
-* TODO: Add more badges to the badge system
+* TODO: Add more badges to the badge system (Platinum, Diamond, etc)
 * TODO: Do lighthouse check for Pomodoro Timer and fix any issues
+* TODO: Add more fun features to Pomodoro Timer (Maybe a fun animation or something)
 
 ## Day 4 Goals:
 * Edit/Open Github Issues To Be Completed Today
