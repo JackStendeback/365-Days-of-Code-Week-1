@@ -20,7 +20,7 @@ function displayTime(seconds) {
 function startTimer() {
     clearInterval(timerInterval);
 
-    let timeLeft = isWorkMode ? 25 * 60 : 5 * 60;
+    let timeLeft = isWorkMode ? 10 : 5;
 
     timerInterval = setInterval(() => {
         timeLeft--;
@@ -31,6 +31,7 @@ function startTimer() {
             if (isWorkMode) {
                 sessionsCount++;
                 sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
+                console.log(sessionDisplay.textContent); // Add this line
             }
             isWorkMode = !isWorkMode; // Then flip the mode
             startTimer(); // Then start the timer again
