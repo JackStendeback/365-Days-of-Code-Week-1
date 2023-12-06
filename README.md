@@ -1,8 +1,6 @@
 # 365-Days-of-Code-Week-1
 Week 1 of my self imposed coding challenge! Let's see how much I grow throughout this. I will set github issues as some of the weekly challenges/goals I want to accomplish within the repositories. Read ME will hold what I've done.
 
-# Repository Badges:
-
 ## GitHub Stats
 
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=JackStendeback&show_icons=true)
@@ -41,8 +39,14 @@ Week 1 of my self imposed coding challenge! Let's see how much I grow throughout
 * Fixed some accessibility issues found in lighthouse, lets fix the rest!
 
 ## Day 3 Goals:
-* Edit/Open Github Issues To Be Completed Today
-
+* Completed Task Manager MVP
+* Completed Pomodoro Timer MVP
+* Cloned Pomodoro to new repository for deployement
+* Deployed Pomodoro Timer to Netlify
+* Added fun badge system to Pomodoro Timer
+* Added unique audio sounds to Pomodoro Timer
+* TODO: Add more badges to the badge system
+* TODO: Do lighthouse check for Pomodoro Timer and fix any issues
 
 ## Day 4 Goals:
 * Edit/Open Github Issues To Be Completed Today
