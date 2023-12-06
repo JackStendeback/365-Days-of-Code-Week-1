@@ -23,9 +23,9 @@ function displayTime(seconds) {
 }
 
 const badgeLevels = [
-    { level: 'Bronze', sessions: 1 },
-    { level: 'Silver', sessions: 2 },
-    { level: 'Gold', sessions: 3 },
+    { level: 'Bronze', sessions: 5 },
+    { level: 'Silver', sessions: 10 },
+    { level: 'Gold', sessions: 15 },
     { level: 'Platinum', sessions: 20 },
     { level: 'Diamond', sessions: 25 },
 ]
