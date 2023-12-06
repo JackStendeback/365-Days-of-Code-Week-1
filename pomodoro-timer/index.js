@@ -2,7 +2,7 @@ const startButton = document.querySelector('.start-timer');  // ? MAKE SURE TO D
 const resetButton = document.querySelector('.reset-timer');  // ? MAKE SURE TO DIFFERENTIATE BETWEEM ID'S AND CLASSES WHEN ASSIGNING CONST VALUES IN JAVASCRIPT. 
 const timeDisplay = document.querySelector('.time');
 const sessionDisplay = document.getElementById('sessions-count');
-let sessionsCount = 0; // Variable to hold the number of sessions completed
+let sessionsCount = localStorage.getItem('sessionsCount') ? parseInt(localStorage.getItem('sessionsCount')) : 0;
 
 let isWorkMode = true; // When false, it's break mode
 
@@ -20,7 +20,7 @@ function displayTime(seconds) {
 function startTimer() {
     clearInterval(timerInterval);
 
-    let timeLeft = isWorkMode ? 10 : 5;
+    let timeLeft = isWorkMode ? 25 * 60 : 5 * 60;
 
     timerInterval = setInterval(() => {
         timeLeft--;
@@ -30,8 +30,8 @@ function startTimer() {
             clearInterval(timerInterval); // Clear the interval first
             if (isWorkMode) {
                 sessionsCount++;
+                localStorage.setItem('sessionsCount', sessionsCount); // ? Save to localStorage
                 sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
-                console.log(sessionDisplay.textContent); // Add this line
             }
             isWorkMode = !isWorkMode; // Then flip the mode
             startTimer(); // Then start the timer again
@@ -43,6 +43,8 @@ function resetTimer() {
     clearInterval(timerInterval);
     isWorkMode = true;
     displayTime(25 * 60);
+    sessionsCount = 0;
+    localStorage.setItem('sessionsCount', sessionsCount); // ? Save to localStorage
 }
 
 resetButton.addEventListener('click', resetTimer);
