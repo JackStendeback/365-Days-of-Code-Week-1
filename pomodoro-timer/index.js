@@ -4,6 +4,8 @@ const timeDisplay = document.querySelector('.time');
 const sessionDisplay = document.getElementById('sessions-count');
 const startSound = new Audio('audio/pomodoro-start.mp3'); // * Start Audio
 const endSound = new Audio('audio/pomodoro-end.mp3'); // * End Audio
+const badgeDisplay = document.getElementById('badge-display');
+const badgeContainer = document.getElementById('badge-container');
 let sessionsCount = localStorage.getItem('sessionsCount') ? parseInt(localStorage.getItem('sessionsCount')) : 0;
 sessionDisplay.textContent = `Pomodoro Sessions Completed: ${sessionsCount}`;
 
@@ -21,12 +23,32 @@ function displayTime(seconds) {
 }
 
 const badgeLevels = [
-    { level: 'Bronze', sessions: 5 },
-    { level: 'Silver', sessions: 10 },
-    { level: 'Gold', sessions: 15 },
+    { level: 'Bronze', sessions: 1 },
+    { level: 'Silver', sessions: 2 },
+    { level: 'Gold', sessions: 3 },
     { level: 'Platinum', sessions: 20 },
     { level: 'Diamond', sessions: 25 },
 ]
+
+// When the page loads
+window.onload = function() {
+    // Get the badge container div
+    const badgeContainer = document.getElementById('badge-container');
+
+    // Check localStorage for any earned badges
+    badgeLevels.forEach(badge => {
+        if (localStorage.getItem(`badge-${badge.level}`)) {
+            // If there's an earned badge in localStorage, create an img element for it
+            const badgeElement = document.createElement('img');
+
+            // Set the src attribute to the badge image
+            badgeElement.src = `badges/${badge.level.toLowerCase()}.png`;
+
+            // Append the img element to the badge container div
+            badgeContainer.appendChild(badgeElement);
+        }
+    });
+};
 
 function startTimer() {
     clearInterval(timerInterval);
@@ -57,11 +79,19 @@ function startTimer() {
 
                 for (const badge of badgeLevels) {
                     if (sessionsCount === badge.sessions) {
-                        // Check if the user has already earned this badge
                         if (!localStorage.getItem(`badge-${badge.level}`)) {
                             // If not, save it to localStorage and alert the user
                             localStorage.setItem(`badge-${badge.level}`, true);
                             alert(`Congratulations! You've earned the ${badge.level} badge!`);
+        
+                            // Create a new img element
+                            const badgeElement = document.createElement('img');
+        
+                            // Set the src attribute to the badge image
+                            badgeElement.src = `badges/${badge.level.toLowerCase()}.png`;
+        
+                            // Append the img element to the badge display div
+                            badgeContainer.appendChild(badgeElement);
                         }
                     }
                 }
@@ -85,7 +115,3 @@ function resetTimer() {
 }
 
 resetButton.addEventListener('click', resetTimer);
-
-
-
-
