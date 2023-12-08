@@ -2,6 +2,7 @@ document.getElementById('generate-btn').addEventListener('click', generatePoem);
 document.getElementById('save-btn').addEventListener('click', savePoem);
 
 function generatePoem() {
+    console.log('Generating poem...');
     // Fetch a random poem from the PoetryDB API
     fetch('https://poetrydb.org/random')
         .then(response => response.json())
