@@ -5,13 +5,19 @@ function generatePoem() {
     fetch('https://poetrydb.org/random')
         .then(response => response.json())
         .then(data => {
-            const poem = data[0].lines.join('\n');
-            const title = data[0].title;
-            const author = data[0].author;
+            let poem = data[0].lines.join('\n');
+            let title = data[0].title;
+            let author = data[0].author;
 
-            document.getElementById('poem-text').textContent = poem;
-            document.getElementById('poem-title').textContent = title;
-            document.getElementById('poem-author').textContent = author;
+            // Check if the poem is below a certain length
+            if (poem.split(' ').length <= 100) { 
+                document.getElementById('poem-text').textContent = poem;
+                document.getElementById('poem-title').textContent = title;
+                document.getElementById('poem-author').textContent = author;
+            } else {
+                // If the poem is too long, generate a new one
+                generatePoem();
+            }
         })
         .catch(error => {
             console.error('Error:', error);

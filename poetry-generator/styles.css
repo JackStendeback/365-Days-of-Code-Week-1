@@ -45,6 +45,13 @@ button:hover {
     background-color: #89DAFF;
 }
 
+#poem-text {
+    line-height: 1.5;
+    text-align: justify;
+    padding: 0 10px;
+    color: #58504A;  /* Change the text color to #58504A */
+}
+
 #poem-title {
     color: #8F95D3;
     font-size: 1.5em;
