@@ -44,3 +44,25 @@ button {
 button:hover {
     background-color: #89DAFF;
 }
+
+#poem-title {
+    color: #8F95D3;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#poem-author {
+    color: #89DAFF;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #poem-display, #saved-poems {
+        width: 100%;
+    }
+}

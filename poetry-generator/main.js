@@ -2,19 +2,18 @@ document.getElementById('generate-btn').addEventListener('click', generatePoem);
 document.getElementById('save-btn').addEventListener('click', savePoem);
 
 function generatePoem() {
-    console.log('Generating poem...');
-    // Fetch a random poem from the PoetryDB API
     fetch('https://poetrydb.org/random')
         .then(response => response.json())
         .then(data => {
-            // Get the poem from the data
             const poem = data[0].lines.join('\n');
+            const title = data[0].title;
+            const author = data[0].author;
 
-            // Display the poem in the poem display area
-            document.getElementById('poem-display').textContent = poem;
+            document.getElementById('poem-text').textContent = poem;
+            document.getElementById('poem-title').textContent = title;
+            document.getElementById('poem-author').textContent = author;
         })
         .catch(error => {
-            // Log any errors
             console.error('Error:', error);
         });
 }
